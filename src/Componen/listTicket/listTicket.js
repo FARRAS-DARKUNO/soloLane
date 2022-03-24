@@ -12,10 +12,18 @@ import styles from "./listTicketStyle";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useRoute } from '@react-navigation/native';
 import { PELABUHANAWAL, PELABUHANTUJUAN, KELAS, Waktu, ALL } from '../../data/data'
+import { useNavigation } from '@react-navigation/native';
 
-const ListTicket = ({ navigation }) => {
+const ListTicket = () => {
 
     const route = useRoute();
+    const navigation = useNavigation();
+
+    // const toOrder = () => {
+    //     navigation.navigate("OrderConfirm", {
+    //         awal : 
+    //     })
+    //}
 
     return (
         <SafeAreaView style={styles.color}>
@@ -52,6 +60,17 @@ const ListTicket = ({ navigation }) => {
                     <View style={{ paddingBottom: 10 }}>
                         <TouchableOpacity
                             style={styles.touchable}
+                            onPress={() => {
+                                navigation.navigate("OrderConfirm", {
+                                    awal: (PELABUHANAWAL.find(sub => sub.awal_id === item.awal_id).awal_nama).toString(),
+                                    akhir: (PELABUHANTUJUAN.find(sub => sub.tujuan_id === item.tujuan_id).tujuan_nama).toString(),
+                                    tanggal: (Waktu.find(sub => sub.waktu_id === item.waktu_id).waktu_nama).toString(),
+                                    jam: (ALL.find(sub => sub.all_id === item.all_id).jam).toString(),
+                                    layanan: (KELAS.find(sub => sub.kelas_id === item.kelas_id).kelas_nama).toString(),
+                                    harga: (ALL.find(sub => sub.all_id === item.all_id).harga).toString(),
+
+                                })
+                            }}
                         >
                             <View style={styles.rowbetwen}>
                                 <Text style={styles.textsubtitle}>{PELABUHANAWAL.find(sub => sub.awal_id === item.awal_id).awal_nama}</Text>
