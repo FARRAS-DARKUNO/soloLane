@@ -10,13 +10,26 @@ import {
 import styles from './containStyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Picker } from "@react-native-picker/picker";
+import ListTicket from '../listTicket/listTicket';
+import { useNavigation } from '@react-navigation/native';
 
-const ContainMain = ({ navigation }) => {
-    const [awal, setAwal] = React.useState('');
-    const [akhir, setAkhir] = React.useState('');
-    const [kelas, setKelas] = React.useState('');
-    const [jam, setJam] = React.useState('');
-    const [tanggal, setTanggal] = React.useState('');
+const ContainMain = () => {
+    const [awal, setAwal] = React.useState('Tanjung Priok');
+    const [akhir, setAkhir] = React.useState('Tanjung Priok');
+    const [kelas, setKelas] = React.useState('Bisnis');
+    const [tanggal, setTanggal] = React.useState('01-01-2022');
+
+
+    const navigation = useNavigation();
+    const toTicket = () => {
+        navigation.navigate("ListTicket", {
+            awal: awal,
+            akhir: akhir,
+            kelas: kelas,
+            tanggal: tanggal,
+        })
+    }
+
     return (
         <View>
             <Text style={styles.textKatalog}>Pelabuhan Awal</Text>
@@ -110,11 +123,11 @@ const ContainMain = ({ navigation }) => {
                         style={styles.picker}
 
                     >
-                        <Picker.Item label="01-01-2022" value="7" />
-                        <Picker.Item label="02-01-2022" value="9" />
-                        <Picker.Item label="03-01-2022" value="13" />
-                        <Picker.Item label="04-01-2022" value="15" />
-                        <Picker.Item label="05-01-2022" value="17" />
+                        <Picker.Item label="01-01-2022" value="01-01-2022" />
+                        <Picker.Item label="02-01-2022" value="02-01-2022" />
+                        <Picker.Item label="03-01-2022" value="03-01-2022" />
+                        <Picker.Item label="04-01-2022" value="04-01-2022" />
+                        <Picker.Item label="05-01-2022" value="05-01-2022" />
                     </Picker>
                     {/* <Text style={styles.text}>Your conuntry: {country}</Text> */}
                 </View>
@@ -125,7 +138,7 @@ const ContainMain = ({ navigation }) => {
 
             <Button
                 title="Right button"
-                // onPress={ }
+                onPress={toTicket}
                 color={'#206378'}
 
             />
