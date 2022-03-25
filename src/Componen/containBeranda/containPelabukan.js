@@ -6,6 +6,7 @@ import {
     ActivityIndicator,
     FlatList,
     Button,
+    TouchableOpacity,
 } from 'react-native';
 import styles from './containStyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -136,12 +137,19 @@ const ContainMain = () => {
             <View style={styles.enter40} />
 
 
-            <Button
+            {/* <Button
                 title="Right button"
                 onPress={toTicket}
                 color={'#206378'}
 
-            />
+            /> */}
+            <TouchableOpacity
+                style={styles.touch}
+
+                onPress={toTicket}
+            >
+                <Text style={styles.textSubmit}>Order</Text>
+            </TouchableOpacity>
 
 
         </View>

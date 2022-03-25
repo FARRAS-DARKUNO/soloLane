@@ -268,5 +268,11 @@ const ALL = [
         harga: 'Rp 900.000',
     },
 ];
+const CHECK = [
+    {
+        tes: 'true',
+        check: true,
+    },
+];
 
-export { PELABUHANAWAL, PELABUHANTUJUAN, KELAS, Waktu, ALL };
+export { PELABUHANAWAL, PELABUHANTUJUAN, KELAS, Waktu, ALL, CHECK };

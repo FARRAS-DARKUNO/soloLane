@@ -50,7 +50,20 @@ const styles = StyleSheet.create({
         //height: 20,
         //width: '100%',
         borderRadius: 10,
-    }
+    },
+    touch: {
+        backgroundColor: '#DDA106',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 40,
+        borderRadius: 10,
+
+    },
+    textSubmit: {
+        fontSize: 14,
+        fontFamily: 'Ubuntu-Bold',
+        color: '#FCFEFF',
+    },
 
 })
 

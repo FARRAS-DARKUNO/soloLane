@@ -19,6 +19,22 @@ const OrderConfirm = ({ navigation }) => {
 
     const route = useRoute();
 
+    let check = false;
+
+    const toOrder = () => {
+        navigation.navigate("Pesanan", {
+            awal: route.params.awal,
+            akhir: route.params.akhir,
+            tanggal: route.params.tanggal,
+            jam: route.params.jam,
+            layanan: route.params.layanan,
+            nama: nama,
+            kelamin: kelamin,
+            harga: route.params.harga,
+            kondisi: 'true',
+        })
+    }
+
     const [nama, onChangeNama] = React.useState('');
     const [kelamin, onChangeKelamin] = React.useState('Perempuan');
 
@@ -98,7 +114,11 @@ const OrderConfirm = ({ navigation }) => {
 
                 <View style={styles.enter30} />
 
-                <TouchableOpacity style={styles.touch}>
+                <TouchableOpacity
+                    style={styles.touch}
+
+                    onPress={toOrder}
+                >
                     <Text style={styles.textSubmit}>Deal Order</Text>
                 </TouchableOpacity>
             </View>
