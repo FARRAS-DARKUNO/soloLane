@@ -136,13 +136,6 @@ const ContainMain = () => {
 
             <View style={styles.enter40} />
 
-
-            {/* <Button
-                title="Right button"
-                onPress={toTicket}
-                color={'#206378'}
-
-            /> */}
             <TouchableOpacity
                 style={styles.touch}
 

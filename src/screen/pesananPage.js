@@ -20,6 +20,20 @@ const PesananPage = ({ navigation }) => {
 
     let check = false;
 
+    const toCancled = () => {
+        navigation.navigate("Pembatalan", {
+            awal: route.params.awal,
+            akhir: route.params.akhir,
+            tanggal: route.params.tanggal,
+            jam: route.params.jam,
+            layanan: route.params.layanan,
+            nama: route.params.nama,
+            kelamin: route.params.kelamin,
+            harga: route.params.harga,
+            kondisi: 'true',
+        })
+    }
+
     return (
         <CheckHaveData />
     )
@@ -88,7 +102,7 @@ const PesananPage = ({ navigation }) => {
 
                         <TouchableOpacity
                             style={styles.touch}
-                            onPress={() => NoHaveData()}
+                            onPress={toCancled}
 
                         >
                             <Text style={styles.textSubmit}>Cancel</Text>

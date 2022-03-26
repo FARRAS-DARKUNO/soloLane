@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'space-between',
         //justifyContent: 'center',
     },
     picker: {
         height: 10,
-        width: 300,
+        width: 260,
         backgroundColor: '#BDDDE3',
 
         //width: 300,
