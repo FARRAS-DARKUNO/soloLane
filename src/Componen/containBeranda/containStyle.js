@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'space-between',
         //justifyContent: 'center',
     },
     picker: {
         height: 10,
-        width: 300,
+        width: 260,
         backgroundColor: '#BDDDE3',
 
         //width: 300,
@@ -50,7 +51,20 @@ const styles = StyleSheet.create({
         //height: 20,
         //width: '100%',
         borderRadius: 10,
-    }
+    },
+    touch: {
+        backgroundColor: '#DDA106',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 40,
+        borderRadius: 10,
+
+    },
+    textSubmit: {
+        fontSize: 14,
+        fontFamily: 'Ubuntu-Bold',
+        color: '#FCFEFF',
+    },
 
 })
 

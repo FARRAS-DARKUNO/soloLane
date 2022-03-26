@@ -5,23 +5,115 @@ import {
     View,
     ActivityIndicator,
     FlatList,
-    Image
+    Image,
+    TouchableOpacity,
+
 } from 'react-native';
 import styles from '../style/pesananStyle';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useRoute } from '@react-navigation/native';
+import { CHECK } from '../data/data';
 
 const PesananPage = ({ navigation }) => {
 
-    return (
-        <SafeAreaView style={styles.color}>
-            <View style={styles.texttitleView}>
-                <Image
+    const route = useRoute();
 
-                    source={require('../assets/images/pesanan.png')}
-                />
-            </View>
-        </SafeAreaView>
+    let check = false;
+
+    const toCancled = () => {
+        navigation.navigate("Pembatalan", {
+            awal: route.params.awal,
+            akhir: route.params.akhir,
+            tanggal: route.params.tanggal,
+            jam: route.params.jam,
+            layanan: route.params.layanan,
+            nama: route.params.nama,
+            kelamin: route.params.kelamin,
+            harga: route.params.harga,
+            kondisi: 'true',
+        })
+    }
+
+    return (
+        <CheckHaveData />
     )
+
+    function CheckHaveData() {
+        try {
+            check = route.params.kondisi;
+        } catch (err) {
+            check = false;
+        }
+
+        let hasil = check ? HaveData() : NoHaveData();
+
+        return hasil;
+    }
+
+    function NoHaveData() {
+
+        return (
+            <SafeAreaView style={styles.color}>
+                <View style={styles.texttitleView}>
+                    <Image
+
+                        source={require('../assets/images/pesanan.png')}
+                    />
+                </View>
+            </SafeAreaView>
+        );
+
+    }
+    function HaveData() {
+        return (
+            <SafeAreaView style={styles.color}>
+                <View style={styles.margin}>
+                    <View style={styles.center}>
+                        <Text style={styles.textKatalog}>Your Order</Text>
+                        <View style={styles.enter40} />
+                        <View style={styles.ViewAll}>
+                            <View style={styles.padding}>
+                                <View style={styles.rowbetwen}>
+                                    <Text style={styles.textsubtitle}>{route.params.awal}</Text>
+                                    <MaterialCommunityIcons name='arrow-right' size={16} style={{ color: '#DDA106' }} />
+                                    <Text style={styles.textsubtitle}>{route.params.akhir}</Text>
+                                </View>
+                                <View style={styles.enter40} />
+                                <Text style={styles.textsubtitle}>Tanggal : {route.params.tanggal}</Text>
+                                <View style={styles.enter10} />
+                                <Text style={styles.textsubtitle}>Jam : {route.params.jam}</Text>
+                                <View style={styles.enter10} />
+                                <Text style={styles.textsubtitle}>Layanan : {route.params.layanan}</Text>
+
+                                <View style={styles.enter30} />
+                                <Text style={styles.textsubtitle}>Pelanggan :</Text>
+                                <View style={styles.enter10} />
+                                <Text >{route.params.nama}</Text>
+                                <Text >{route.params.kelamin}</Text>
+
+                                <View style={styles.enter30} />
+                                <View style={styles.rowend}>
+                                    <Text style={styles.textuang}>{route.params.harga}</Text>
+                                </View>
+
+                            </View>
+                        </View>
+                        <View style={styles.enter30} />
+
+                        <TouchableOpacity
+                            style={styles.touch}
+                            onPress={toCancled}
+
+                        >
+                            <Text style={styles.textSubmit}>Cancel</Text>
+                        </TouchableOpacity>
+
+                    </View>
+                </View>
+            </SafeAreaView>
+        );
+    }
+
 
 }
 

@@ -4,8 +4,6 @@ const styles = StyleSheet.create({
     color: {
         backgroundColor: '#206378',
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     margin: {
         margin: 20,
@@ -31,26 +29,15 @@ const styles = StyleSheet.create({
     enter20: {
         height: 20,
     },
-    enter10: {
-        height: 10,
+    row: {
+        flexDirection: 'row'
     },
-    ViewAll: {
-        height: 310,
-        width: 310,
+    touchable: {
+        height: 170,
+        width: '100%',
+        backgroundColor: "#FCFEFF",
+        padding: 30,
         borderRadius: 10,
-        backgroundColor: '#FCFEFF',
-        padding: 10,
-    },
-    center: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        //margin: 10,
-    },
-    padding: {
-        padding: 10,
-        backgroundColor: '#BDDDE3',
-        height: '100%',
-        padding: 10,
     },
     rowbetwen: {
         flexDirection: 'row',
@@ -68,27 +55,19 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
 
     },
-    textuang: {
-        fontSize: 16,
+    textsubuang: {
+        fontSize: 18,
         fontFamily: 'Ubuntu-Bold',
         color: '#DDA106',
 
         //alignItems: 'center',
     },
-    touch: {
-        backgroundColor: '#DDA106',
-        justifyContent: 'center',
+    tengah: {
         alignItems: 'center',
-        height: 40,
-        borderRadius: 10,
-        width: 310,
-
-    },
-    textSubmit: {
-        fontSize: 14,
-        fontFamily: 'Ubuntu-Bold',
-        color: '#FCFEFF',
-    },
+        justifyContent: 'center',
+        //backgroundColor: 'red',
+        height: 600,
+    }
 
 })
 

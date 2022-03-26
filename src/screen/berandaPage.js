@@ -17,7 +17,7 @@ const BerandaPage = ({ navigation }) => {
                 <View style={styles.viewMain}>
                     <View style={styles.margin}>
                         <View style={styles.texttitleView}>
-                            <Text style={styles.textKatalog}>KAPALZ</Text>
+                            <Text style={styles.textKatalog}>FARRASHIP</Text>
                         </View>
                         <View style={styles.enter40} />
 

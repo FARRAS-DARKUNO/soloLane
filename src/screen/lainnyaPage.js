@@ -6,7 +6,7 @@ import {
     ActivityIndicator,
     FlatList,
 } from 'react-native';
-import styles from '../style/pembatalan';
+import styles from '../style/lainnyaStyle';
 const LainnyaPage = ({ navigation }) => {
 
     return (
